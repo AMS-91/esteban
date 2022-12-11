@@ -17,30 +17,30 @@
     <form method="POST">
         {% csrf_token %}
         아이디: <br>
-        <input name="username" type="text">
+        <input name="username" type="text" />
         <br>
         비밀번호: <br>
-        <input name="password1" type="password">
+        <input name="password1" type="password" />
         <br>
         비밀번호 확인: <br>
-        <input name="password2" type="password">
+        <input name="password2" type="password" />
         <br>
         이메일: <br>
-        <input name="email" type="email">
+        <input name="email" type="email" />
         <br><br>
         이름: <br>
-        <input name="name" type="text">
+        <input name="name" type="text" />
         <br><br>
         생년월일: <br>
-        <input name="birth" type="date">
+        <input name="birth" type="date" />
         <br><br>
         전화번호: <br>
-        <input name="phone" type="number">
+        <input name="phone" type="text" placeholder="010-0000-0000" maxlength="13" />
         <br><br>
-        주소(시/군/구 ex.상암/마포/부천): <br>
-        <input name="address" type="text">
+        주소: <br>
+        <input name="address" type="text" placeholder="ex.상암/마포/부천" />
         <br><br>
-        <input type="submit" value="가입하기">
+        <input type="submit" value="가입하기" />
     </form>
 </div>
 </body>
