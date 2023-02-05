@@ -1,0 +1,19 @@
+{% load static %}
+{% block title %}
+<title>esteban</title>
+{% endblock %}
+<h1>회원관리</h1>
+<form method="POST">
+    {% for user in user_list %}
+    <table>
+        <thead>
+            <th>번호</th>
+            <th>이름</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    {% endfor %}
+   회원관리 목록
+</form>

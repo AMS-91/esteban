@@ -30,3 +30,28 @@ def sign_up(request):
         return render(request, 'sign_up.html')
 
     return render(request, 'sign_up.html')
+
+@transaction.atomic
+def sign_in(request):
+    if request.method == 'POST':
+        id = request.POST['id']
+        password = request.POST['password']
+        userInfo = User.objects.filter(username=id)
+        error_msg = '계정이 존재하지 않거나, 계정 또는 패스워드가 틀립니다.'
+        if userInfo:
+            user = auth.authenticate(username=id, password=password)
+            if user is not None:
+                auth.login(request, user)
+                return redirect(request, 'user_list.html')
+            else:
+                return render(request, 'sign_in.html', {'errors': error_msg })
+        else:
+            return render(request, 'sign_in.html', {'errors': error_msg })
+    else:
+        return render(request, 'sign_in.html')
+
+def user_list(request):
+    if request.method == "POST":
+        pass
+    else:
+        render(request, 'user_list.html')

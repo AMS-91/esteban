@@ -2,15 +2,17 @@
 {% block title %}
 <title>esteban</title>
 {% endblock %}
-<h1>글쓰기 페이지</h1>
+<h1>로그인</h1>
 <form method="POST">
     {% csrf_token %}
-    제목<br>
-    <input type="text" name="postname"><br>
-    내용<br>
-    <textarea rows="10" cols="50" name="contents"></textarea><br>
-    <input type="file" name="mainphoto"><br>
-    <input type="submit" value="글쓰기">
+    아이디<br>
+    <input type="text" name="id"><br>
+    비밀번호<br>
+    <input type="password" name="password"><br>
+    {% if errors %}
+    {{ errors }} <br>
+    {% endif %}
+    <input type="submit" value="로그인">
 </form>
 
 
